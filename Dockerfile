@@ -1,4 +1,5 @@
 FROM node:argon
+#RUN npm install forever -g
 
 # Create app directory
 RUN mkdir -p /usr/src/app

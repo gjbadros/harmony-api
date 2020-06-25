@@ -1,0 +1,7 @@
+#!/bin/sh -
+NAME=harmony-api-gjb
+docker kill $NAME
+docker rm old_$NAME
+docker rename $NAME old_$NAME
+#exec docker run --name=$NAME -p 8282:8282 -v "$HOME/harmony_api_config:/config" --restart unless-stopped -d gjbadros/harmony-api 
+exec docker run --name=$NAME --network=host -v "$HOME/harmony_api_config:/config" --restart unless-stopped -d gjbadros/harmony-api 
